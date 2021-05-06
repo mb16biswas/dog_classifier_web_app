@@ -42,7 +42,7 @@ if(dog is not None):
         st.image(dog, caption='Uploaded Image.', use_column_width="always")
         name, prob = process(dog)
         prob = round(prob)
-        st.write(f"it is {name} with the probability of {prob} %")
+        st.write(f"it is {name} with the chances of {prob} %")
 
     except Exception as e:
         print(e)
