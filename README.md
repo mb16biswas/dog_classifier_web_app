@@ -25,6 +25,20 @@ To run streamlit app
 
 
 
+
+Docker commands for Development:
+
+`docker build -f Dockerfile.dev -t app:latest .`
+
+`docker run -p 8000:8000 app:latest`
+
+For GCP Production:
+
+`gcloud builds submit --tag gcr.io/<ProjectName>/<AppName>  --project=<ProjectName>`
+
+`gcloud run deploy --image gcr.io/<ProjectName>/<AppName> --platform managed  --project=<ProjectName> --allow-unauthenticated`
+
+
 <!---https://user-images.githubusercontent.com/64213233/137639122-529cf04c-d82a-47f3-aa31-ca1fdc3a46df.mp4--->
 
 # Demo
