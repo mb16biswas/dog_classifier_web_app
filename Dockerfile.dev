@@ -1,0 +1,37 @@
+# FROM python:3.7
+
+
+# # Expose port you want your app on
+# EXPOSE 8201
+
+# # Upgrade pip and install requirements
+# COPY requirements.txt requirements.txt
+# RUN pip install -U pip
+# RUN pip install -r requirements.txt
+
+# # Copy app code and set working directory
+# COPY . .
+# WORKDIR /app
+
+# # Run
+# ENTRYPOINT ["streamlit", "run", "app/app.py", "–server.port=8201", "–server.address=0.0.0.0"]
+
+
+
+
+
+FROM python:3.7
+
+WORKDIR /app
+
+COPY . .
+
+RUN apt-get update && apt-get install -y sudo
+
+RUN pip3 install -r requirements.txt
+
+EXPOSE 8000
+
+HEALTHCHECK CMD curl --fail http://localhost:8000/_stcore/health
+
+ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8000", "--server.address=0.0.0.0"]
