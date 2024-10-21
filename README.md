@@ -10,7 +10,7 @@
 
 
 # Deployed Here
-[Live Link](https://share.streamlit.io/mb16biswas/dog_classifier_web_app/main/app.py)
+[Live Link](https://dog-cls-deploy-1005503367247.asia-south1.run.app/)
 
 
 # Download the repository and install the required packages:
