@@ -34,6 +34,10 @@ Docker commands for Development:
 
 For GCP Production:
 
+`gcloud auth login`
+
+`gcloud config set project PROJECT_ID`
+
 `gcloud builds submit --tag gcr.io/<ProjectName>/<AppName>  --project=<ProjectName>`
 
 `gcloud run deploy --image gcr.io/<ProjectName>/<AppName> --platform managed  --project=<ProjectName> --allow-unauthenticated`
