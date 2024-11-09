@@ -32,7 +32,7 @@ Docker commands for Development:
 
 `docker run -p 8000:8000 app:latest`
 
-For GCP Production:
+# For GCP Production:
 
 `gcloud auth login`
 
