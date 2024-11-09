@@ -17,7 +17,10 @@
 
 Clone this repo and install the required packages:
 
-`pip3 install -r requirements.txt`
+1. `python -m venv my-env`
+2. `my-env\Scripts\activate`
+3. `pip install -r requirements.txt`
+
 
 To run streamlit app
 
