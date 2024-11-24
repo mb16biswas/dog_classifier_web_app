@@ -39,7 +39,7 @@ jobs:
       # Step 4: Run tests (if any)
       - name: Run Tests
         run: |
-          python -m unittest discover -s tests || echo "No tests found"
+          python -m unittest discover -s tests
 
       # Step 5: Authenticate with Google Cloud
       - name: Authenticate with Google Cloud
@@ -56,14 +56,10 @@ jobs:
       # Step 7: Build container image
       - name: Build Container Image
         run: |
-          docker build -t gcr.io/$PROJECT_ID/$APP_ID:$GITHUB_SHA .
+          gcloud builds submit --tag gcr.io/$PROJECT_ID/$APP_ID:$GITHUB_SHA .
 
-      # Step 8: Push container image to Google Container Registry
-      - name: Push Image to Container Registry
-        run: |
-          docker push gcr.io/$PROJECT_ID/$APP_ID:$GITHUB_SHA
 
-      # Step 9: Deploy to Google Cloud Run
+      # Step 8: Deploy to Google Cloud Run
       - name: Deploy to Cloud Run
         run: |
           gcloud run deploy $APP_ID \
@@ -71,5 +67,4 @@ jobs:
             --region=$RUN_REGION \
             --platform=managed \
             --allow-unauthenticated
-
 
