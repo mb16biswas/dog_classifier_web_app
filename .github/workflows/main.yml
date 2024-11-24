@@ -10,7 +10,7 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  APP_ID: streamlit-dog-classifier
+  APP_ID: dog-cls-ci-cd
   RUN_REGION: asia-south1
   SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
 
